@@ -1,0 +1,29 @@
+package Dzień2;
+
+import java.util.Arrays;
+
+public class Task16 {
+    public static void main(String[] args) {
+        int[] ints = new int[]{12, 7, 19, 33};
+        System.out.println("Input: " + Arrays.toString(ints));
+        int[] reverseArray = reverseArray(ints);
+        System.out.println("Result: " + Arrays.toString(reverseArray));
+
+
+    }
+    private static int[] reverseArray(int[] input){
+        /* int tmp = input[0];
+        input[0] = input[2];
+        input[2] = temp;
+         */
+
+        for (int i =0; i < input.length/2; i++){
+            int nextPositionElement = (input.length -1) -i;
+            int tmp = input[i];
+            input[i] = input[nextPositionElement];
+            input[nextPositionElement] = tmp;
+        }
+        return input;
+    }
+
+}
